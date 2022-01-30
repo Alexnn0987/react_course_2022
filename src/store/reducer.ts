@@ -1,10 +1,9 @@
-// import { bindActionCreators } from "redux";
-
+import { PostsDataType } from "../assets/data";
 import { PostsActionsType } from "./actions";
 import { ActionsType, ReducerType } from "./types";
 
 const initialState: ReducerType = {
-  posts: [],
+  posts: [] as PostsDataType,
 };
 
 const reduser = (state = initialState, action: ActionsType): ReducerType => {
