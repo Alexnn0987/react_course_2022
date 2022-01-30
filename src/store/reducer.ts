@@ -1,9 +1,8 @@
-import { PostsDataType } from "../assets/data";
 import { PostsActionsType } from "./actions";
 import { ActionsType, ReducerType } from "./types";
 
 const initialState: ReducerType = {
-  posts: [] as PostsDataType,
+  posts: [],
 };
 
 const reduser = (state = initialState, action: ActionsType): ReducerType => {
