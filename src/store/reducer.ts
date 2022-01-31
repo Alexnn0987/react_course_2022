@@ -1,20 +1,26 @@
-import { PostsActionsType } from "./actions";
+import { PostsActionsType, UsersActionsType } from "./actions";
 import { ActionsType, ReducerType } from "./types";
 
 const initialState: ReducerType = {
   posts: [],
+  user: { lastName: "", firstName: "" },
 };
 
-const reduser = (state = initialState, action: ActionsType): ReducerType => {
+const reducer = (state = initialState, action: ActionsType): ReducerType => {
   switch (action.type) {
     case PostsActionsType.fetchPostsData:
       return {
         ...state,
         posts: action.payload,
       };
+    case UsersActionsType.userRegistration:
+      return {
+        ...state,
+        user: action.payload,
+      };
     default:
       return state;
   }
 };
 
-export default reduser;
+export default reducer;

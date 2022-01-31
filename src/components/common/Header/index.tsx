@@ -1,9 +1,11 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import { getUserData } from "../../../store/selectors";
 import style from "./Header.module.scss";
 
 const Header: React.FC = () => {
-  console.log("render");
+  const userData = useSelector(getUserData);
 
   return (
     <header className={style["wrapper-example"]}>
@@ -25,9 +27,18 @@ const Header: React.FC = () => {
           </li>
         </ul>
       </nav>
-      <button type="button" className={style.btn}>
-        <span>SIGN UP</span>
-      </button>
+      {userData.firstName && userData.lastName ? (
+        <div>
+          <p>{userData.firstName}</p>
+          <p>{userData.lastName}</p>
+        </div>
+      ) : (
+        <Link to="/registration">
+          <button type="button" className={style.btn}>
+            <span>SIGN UP</span>
+          </button>
+        </Link>
+      )}
     </header>
   );
 };

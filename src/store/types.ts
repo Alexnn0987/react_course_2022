@@ -1,8 +1,14 @@
 import { PostsDataType } from "../assets/data";
-import { PostsActionsType } from "./actions";
+import { PostsActionsType, UsersActionsType } from "./actions";
 
 export type ReducerType = {
   posts: PostsDataType;
+  user: UserType;
+};
+
+export type UserType = {
+  lastName: string;
+  firstName: string;
 };
 
 export type FetchPostsDataActionType = {
@@ -10,4 +16,9 @@ export type FetchPostsDataActionType = {
   payload: PostsDataType;
 };
 
-export type ActionsType = FetchPostsDataActionType;
+export type userRegistrationActionType = {
+  type: UsersActionsType.userRegistration;
+  payload: UserType;
+};
+
+export type ActionsType = FetchPostsDataActionType | userRegistrationActionType;

@@ -9,8 +9,6 @@ const PostsPage: React.FC = () => {
   const dispatch = useDispatch();
   const data = useSelector(getPostsData);
 
-  console.log(data);
-
   useEffect(() => {
     setTimeout(() => dispatch(fetchPostsDataAction(fakeData)), 2000);
   }, []);
