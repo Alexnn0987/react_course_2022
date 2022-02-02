@@ -34,13 +34,13 @@ const RegistrationForm: React.FC = () => {
     }
   };
 
-  function clearForm() {
+  const clearForm = () => {
     setFirstName("");
     setLastName("");
     setEmail("");
     setPassword("");
     setRepeatPassword("");
-  }
+  };
   return (
     <div>
       <Input

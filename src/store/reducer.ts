@@ -18,6 +18,11 @@ const reducer = (state = initialState, action: ActionsType): ReducerType => {
         ...state,
         user: action.payload,
       };
+    case UsersActionsType.userLogout:
+      return {
+        ...state,
+        user: initialState.user,
+      };
     default:
       return state;
   }
