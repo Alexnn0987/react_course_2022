@@ -1,13 +1,19 @@
-import { PostsDataType } from "../../assets/data";
 import { PostsActionsType } from "./actions";
 
 export type ReducerType = {
-  posts: PostsDataType;
+  posts: OnePostType[];
 };
 
-type FetchPostsDataActionType = {
+export type OnePostType = {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+};
+
+export type FetchPostsDataActionType = {
   type: PostsActionsType.fetchPostsData;
-  payload: PostsDataType;
+  payload: OnePostType[];
 };
 
 export type ActionsType = FetchPostsDataActionType;
