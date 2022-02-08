@@ -2,6 +2,7 @@ import { PostsActionsType } from "./actions";
 
 export type ReducerType = {
   posts: OnePostType[];
+  onePost: OnePostType;
 };
 
 export type OnePostType = {
@@ -16,4 +17,9 @@ export type FetchPostsDataActionType = {
   payload: OnePostType[];
 };
 
-export type ActionsType = FetchPostsDataActionType;
+export type FetchOnePostActionType = {
+  type: PostsActionsType.fetchOnePost;
+  payload: OnePostType;
+};
+
+export type ActionsType = FetchPostsDataActionType | FetchOnePostActionType;
